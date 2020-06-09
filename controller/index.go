@@ -13,14 +13,8 @@ var category model.Category
 // Indexs index data
 func Indexs(ctx iris.Context) {
 	// fmt.Println(ctx.Host())
-	var datalen int
+	d := make([]model.Category, 0)
 	data, err := category.GetIndexs()
-	if len(data) <= 0 {
-		datalen = 0
-	} else {
-		datalen = len(data)
-	}
-	d := make([]model.Category, datalen)
 	if err != nil {
 		fmt.Println("err")
 	}
