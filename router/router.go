@@ -20,6 +20,7 @@ func InitRouter() *iris.Application {
 	v1 := app.Party("/api")
 	{
 		v1.Get("/", controller.Indexs)
+		v1.Get("/category", controller.CategoryList)
 	}
 	return app
 }
