@@ -51,8 +51,15 @@ func CategoryList(ctx iris.Context) {
 		if !strings.Contains(item.Cover, "http") {
 			item.Cover = strings.Join([]string{"https", item.Cover}, ":")
 		}
-		if !strings.Contains(more.CIM, "http") {
-			more.CIM = strings.Join([]string{"https", more.CIM}, ":")
+		if len(more.CIM) > 0 {
+			if !strings.Contains(more.CIM, "http") {
+				more.CIM = strings.Join([]string{"https", more.CIM}, ":")
+			}
+		}
+		if len(more.Play) > 0 {
+			if !strings.Contains(more.Play, "http") {
+				more.Play = strings.Join([]string{"http", more.Play}, ":")
+			}
 		}
 		d = append(d, Category{
 			ID:     item.ID,
