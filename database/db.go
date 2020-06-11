@@ -23,7 +23,7 @@ func init() {
 		log.Fatal("error daabase")
 	}
 	//开启Dubug模式，酸爽
-	Eloquent.LogMode(true)
+	// Eloquent.LogMode(true)
 
 	// 全局禁用表名复数
 	Eloquent.SingularTable(true)
