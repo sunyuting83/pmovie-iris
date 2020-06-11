@@ -1,7 +1,9 @@
 package controller
 
 import (
+	"encoding/json"
 	"net/http"
+	leveldb "pornplay/leveldb"
 	"strconv"
 	"strings"
 	"time"
@@ -25,7 +27,13 @@ type Live struct {
 
 // GetLives Get Live List
 func GetLives(ctx iris.Context) {
-	lives := LiveScrape(false)
+	cache := leveldb.GetLevel("live")
+	lives := make([]LiveList, 0)
+	if cache == "leveldb: not found" {
+		lives = LiveScrape(false)
+	} else {
+		lives = LiveToJsons(cache)
+	}
 	ctx.JSON(lives)
 }
 
@@ -77,6 +85,9 @@ func LiveScrape(cors bool) []LiveList {
 			List = append(List, LiveList{URL: urls, Title: title, Cover: cover})
 		}
 	})
+	if len(List) > 0 {
+		leveldb.SetLevel("live", LiveToStr(List), 300000)
+	}
 	return List
 }
 
@@ -125,4 +136,23 @@ func getLiveScrape(t string, cors bool) Live {
 	})
 
 	return live
+}
+
+// LiveToJsons live to json
+func LiveToJsons(s string) (result []LiveList) {
+	err := json.Unmarshal([]byte(s), &result)
+	if err != nil {
+		return
+	}
+	return
+}
+
+// LiveToStr fun
+func LiveToStr(d []LiveList) (result string) {
+	resultByte, errError := json.Marshal(d)
+	result = string(resultByte)
+	if errError != nil {
+		return
+	}
+	return
 }
