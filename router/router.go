@@ -5,7 +5,6 @@ import (
 
 	"github.com/iris-contrib/middleware/cors"
 	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/logger"
 	"github.com/kataras/iris/middleware/recover"
 )
 
@@ -19,7 +18,7 @@ func InitRouter() *iris.Application {
 	})
 
 	app.Use(recover.New())
-	app.Use(logger.New())
+	// app.Use(logger.New())
 	app.HandleDir("/cover", "./static/cover") // static
 	// Simple group: v1.
 	v1 := app.Party("/api", crs).AllowMethods(iris.MethodOptions) // <- 对于预检很重要。
