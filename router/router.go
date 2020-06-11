@@ -27,6 +27,8 @@ func InitRouter() *iris.Application {
 		v1.Get("/", controller.Indexs)
 		v1.Get("/category", controller.CategoryList)
 		v1.Get("/searchkey", controller.SearchKey)
+		v1.Get("/search", controller.GetSearch)
+		v1.Get("/hotkey", controller.GetSearchHot)
 	}
 	return app
 }
