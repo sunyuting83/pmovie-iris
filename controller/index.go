@@ -5,7 +5,6 @@ import (
 	"fmt"
 	leveldb "pornplay/leveldb"
 	model "pornplay/models"
-	"strings"
 
 	"github.com/kataras/iris"
 )
@@ -22,11 +21,12 @@ func Indexs(ctx iris.Context) {
 		if err != nil {
 			fmt.Println("err")
 		}
-		host := strings.Join([]string{"http", ctx.Host()}, "://")
-		for _, item := range data {
-			item.Cover = strings.Join([]string{host, item.Cover}, "")
-			d = append(d, model.Category{ID: item.ID, Category: item.Category, Sort: item.Sort, Cover: item.Cover})
-		}
+		d = data
+		// host := strings.Join([]string{"http", ctx.Host()}, "://")
+		// for _, item := range data {
+		// 	item.Cover = strings.Join([]string{host, item.Cover}, "")
+		// 	d = append(d, model.Category{ID: item.ID, Category: item.Category, Sort: item.Sort, Cover: item.Cover})
+		// }
 		if len(data) > 0 {
 			leveldb.SetLevel("index", InToStr(d), 86400000)
 		}
