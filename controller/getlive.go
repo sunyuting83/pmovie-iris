@@ -97,9 +97,8 @@ func getLiveScrape(t string, cors bool) Live {
 	var (
 		err  error
 		url  string
-		live Live
+		live Live = Live{URL: "", Code: 0}
 	)
-	live = Live{URL: "", Code: 0}
 	if len(t) <= 0 {
 		return live
 	}
