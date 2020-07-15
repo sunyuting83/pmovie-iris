@@ -15,7 +15,7 @@ import (
 // LiveList Live List
 type LiveList struct {
 	URL   string `json:"url"`
-	Title string `josn:"title"`
+	Title string `json:"title"`
 	Cover string `json:"cover"`
 }
 
