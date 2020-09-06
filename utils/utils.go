@@ -13,7 +13,7 @@ func GetDBPath(t string, d bool) string {
 		dir string
 	)
 	if d {
-		dir = "/home/sun/Works/gopath/src/pornplay"
+		dir = "/home/sun/Works/go/src/pornplay"
 	} else {
 		path, err := os.Executable()
 		if err != nil {
