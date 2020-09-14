@@ -3,7 +3,7 @@ package database
 import (
 	"log"
 
-	utils "pornplay/utils"
+	utils "porn_movie/utils"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite" //加载mysql

@@ -1,7 +1,7 @@
 package models
 
 import (
-	orm "pornplay/database"
+	orm "porn_movie/database"
 )
 
 // Category struct

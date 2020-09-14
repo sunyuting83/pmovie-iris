@@ -2,8 +2,8 @@ package controller
 
 import (
 	"encoding/json"
-	leveldb "pornplay/leveldb"
-	model "pornplay/models"
+	leveldb "porn_movie/leveldb"
+	model "porn_movie/models"
 	"strconv"
 	"strings"
 

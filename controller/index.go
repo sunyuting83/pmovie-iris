@@ -3,8 +3,8 @@ package controller
 import (
 	"encoding/json"
 	"fmt"
-	leveldb "pornplay/leveldb"
-	model "pornplay/models"
+	leveldb "porn_movie/leveldb"
+	model "porn_movie/models"
 
 	"github.com/kataras/iris"
 )

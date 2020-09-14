@@ -1,7 +1,7 @@
 package router
 
 import (
-	controller "pornplay/controller"
+	controller "porn_movie/controller"
 
 	"github.com/iris-contrib/middleware/cors"
 	"github.com/kataras/iris"
