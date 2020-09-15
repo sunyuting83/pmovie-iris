@@ -5,7 +5,7 @@ import (
 	utils "porn_movie/utils"
 	"sync"
 
-	"github.com/alash3al/redix/kvstore/leveldb"
+	leveldb "github.com/alash3al/redix/kvstore/leveldb"
 )
 
 // LevelDB a
