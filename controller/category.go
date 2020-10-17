@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kataras/iris"
+	"github.com/kataras/iris/v12"
 )
 
 var categoryList model.CategoryList
