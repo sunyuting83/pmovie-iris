@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/kataras/iris"
+	"github.com/kataras/iris/v12"
 )
 
 // LiveList Live List

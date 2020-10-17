@@ -6,7 +6,7 @@ import (
 	leveldb "porn_movie/leveldb"
 	model "porn_movie/models"
 
-	"github.com/kataras/iris"
+	"github.com/kataras/iris/v12"
 )
 
 var category model.Category

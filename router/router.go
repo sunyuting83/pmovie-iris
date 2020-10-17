@@ -4,8 +4,8 @@ import (
 	controller "porn_movie/controller"
 
 	"github.com/iris-contrib/middleware/cors"
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/recover"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/middleware/recover"
 )
 
 // InitRouter make router
