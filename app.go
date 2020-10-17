@@ -32,5 +32,5 @@ func main() {
 	})
 
 	// app.Run(iris.Addr(strings.Join([]string{":", port}, "")), iris.WithoutServerError(iris.ErrServerClosed))
-	app.Listen(strings.Join([]string{":", port}, ""), iris.WithoutServerError(iris.ErrServerClosed))
+	app.Listen(strings.Join([]string{":", port}, ""))
 }
